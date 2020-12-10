@@ -21,6 +21,40 @@ nav{
     padding: 10px 50px;
     /* background: #080033; */
 }
+.nav-left{
+    display: flex;
+    gap: 30px;
+}
+.nav-left ul{
+    list-style: none;
+}
+.nav-left ul li{
+    padding: 3px;
+}
+.nav-left ul li a{
+    text-decoration: none;
+    color: #000;
+}
+.categories{
+    position: relative;
+}
+.categories .dropdown{
+    width: 120px;
+    position: absolute;
+    background: #fff;
+    border-radius: 0 0 3px 3px;
+    top: 30px;
+    display: none;
+}
+.dropdown li:hover{
+    background: #f4f4f4;
+}
+.categories{
+    padding-top: 8px;
+}
+.categories:hover .dropdown{
+    display: block;
+}
 .nav-logo{
     font-family: 'Castoro', serif;
     font-style: italic;
@@ -72,6 +106,25 @@ header{
 }
 header h1{
     font-weight: bolder;
+}
+header input[type=text] {
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width: 480px;
+    border-radius: 3px 0 0 3px;
+    font-family: 'Roboto', sans-serif;
+}
+header form input[type=submit]{
+    padding: 8px 20px;
+    font-size: 17px;
+    border: none;
+    background: #080033;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
 }
 .seller-btn{
     text-decoration: none;
@@ -209,6 +262,7 @@ header h1{
 /* final details */
 .final-details{
     padding: 60px;
+    text-align: center;
 }
 
 /* footer */
