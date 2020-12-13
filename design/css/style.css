@@ -29,7 +29,7 @@ nav{
     list-style: none;
 }
 .nav-left ul li{
-    padding: 3px;
+    padding: 4px;
 }
 .nav-left ul li a{
     text-decoration: none;
@@ -272,3 +272,56 @@ footer{
     font-weight: bolder;
     padding: 20px;
 }
+/* footer */
+
+/* Shop */
+.shop{
+    display: flex;
+    gap: 20px;
+}
+.shop .left-menu{
+    width: 20%;
+    padding: 10px;
+}
+.shop ul li{
+    list-style: none;
+    padding: 10px;
+    width: 200px;
+}
+.shop ul li:hover{
+    background: #f5f5f5;
+}
+.shop ul li a{
+    text-decoration: none;
+    color: #000;
+}
+.the-items-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background: #f4f4f4;
+    padding: 10px;
+}
+.items-card{
+    background: #fff;
+}
+.items-card img{
+    object-fit: cover;
+    width: 100%;
+}
+.items-card-content{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.items-card-content-right{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.pagination{
+    text-align: center;
+    padding: 50px;
+}
+/* shop */
