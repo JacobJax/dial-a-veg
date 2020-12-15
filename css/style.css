@@ -19,6 +19,7 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 10px 50px;
+    padding-top: 20px;;
     /* background: #080033; */
 }
 .nav-left{
@@ -88,6 +89,12 @@ nav{
     padding: 10px 35px;
     color: #fff;
     border-radius: 3px;
+}
+.sign-btn{
+    border: #ff3d00 3px solid;
+    padding: 8px 25px;
+    border-radius: 3px;
+    color: #000;
 }
 /* navbar */
 
@@ -327,7 +334,17 @@ footer{
 /* shop */
 
 /* red text */
+form{
+    width: 95%;
+    max-width: 700px;;
+}
 form .red-text{
     font-size: 13px;
     color: red;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

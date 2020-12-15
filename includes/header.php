@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dial a veg</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="../design/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <nav>
         <div class="nav-left">
             <div class="nav-logo">
-                <h3>Dial a veg</h3>
+                <h3><a href="index.php">Dial a Veg</a></h3>
             </div>
             <div class="categories">
                 <ul>
@@ -31,13 +31,14 @@
         <div class="nav-items">
             <ul>
                 <div class="common-items">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Contat us</a></li>
+                    <li><a href="#">Cart</a></li>
                 </div>
                 <div class="call-to-action">
-                    <li><a href="#" class="seller-btn">Become a seller</a></li>
-                    <li><a href="#" class="login-btn">Log in</a></li>
+                    <li><a href="../sellers/register.php" class="seller-btn">Become a seller</a></li>
+                    <li><a href="../customers/login.php" class="login-btn">Log in</a></li>
+                    <li><a href="../customers/register.php" class="sign-btn">Sign up</a></li>
                 </div>                
             </ul>
         </div>

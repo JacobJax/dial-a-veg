@@ -48,12 +48,11 @@
                 $errors['email'] = 'Email must be a valid email address';
             }else{
                 $email = $_POST['email'];
-                $t_sql = "SELECT * FROM sellers WHERE email = ? ";
+                $t_sql = "SELECT * FROM customers WHERE email= ? ";
 
                 $stmt = $pdo->prepare($t_sql);
                 $stmt->execute([$email]);
-                $det_email = $stmt->fetch();
-                if($det_email){
+                if($stmt->fetch()){
                     $errors['email'] = 'That email is already taken';
                 }
             }
@@ -118,22 +117,20 @@
             $prof = ".." . "/profile-pics/" . "default-profile.png";
             $hash_password = password_hash($pwd, PASSWORD_DEFAULT);
 
-            $seller = new User($f_name, $l_name, $email, $phone, $county, $city, $dob, $prof, $hash_password);
+            $customer = new User($f_name, $l_name, $email, $phone, $county, $city, $dob, $prof, $hash_password);
 
-            $seller->register("sellers");
+            $customer->register("customers");
 
             $f_name = $l_name = $email = $phone = $county = $city = $dob =  $pwd = $rpt_pwd = '';
         }
-        
     }
 
 
 ?>
-<?php include"sellers-header.php"; ?>
+<?php include"../includes/header.php"; ?>
 <div class="container center">
     <form method="POST">
-    <h1 class="h3 mb-3 font-weight-normal text-center">Register</h1>
-    <p class="text-center"><small>Register to become a trader with just a few details</small></p><hr>
+    <h1 class="h3 mb-3 font-weight-normal text-center">Sign up</h1><hr>
         <div class="form-row">
             <div class="form-group col-md-6">
             <label for="inputEmail4">First name</label>
