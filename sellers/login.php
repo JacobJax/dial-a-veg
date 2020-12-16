@@ -15,7 +15,7 @@
       $stmt = $pdo->prepare($sql);
       $stmt->execute([$email]);
       $details = $stmt->fetchObject();
-      var_dump($details);
+      // var_dump($details);
       if($details){
         $hash_pwd = $details->password;
         if(password_verify($password, $hash_pwd)){
@@ -25,7 +25,9 @@
           $_SESSION["fullname"] = $details->first_name . ' ' . $details->last_name;
 
           header("Location: dashboard.php");
-        } 
+        } else {
+          $errors['password'] = 'Wrong password try again';
+        }
       }
     }
   }
