@@ -29,9 +29,9 @@ nav{
 .nav-left ul{
     list-style: none;
 }
-.nav-left ul li{
+/* .nav-left ul li{
     /* padding: 4px; */
-}
+} */
 .nav-left ul li a{
     text-decoration: none;
     color: #000;
