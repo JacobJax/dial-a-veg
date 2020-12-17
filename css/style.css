@@ -29,9 +29,7 @@ nav{
 .nav-left ul{
     list-style: none;
 }
-/* .nav-left ul li{
-    /* padding: 4px; */
-} */
+
 .nav-left ul li a{
     text-decoration: none;
     color: #000;
@@ -46,6 +44,16 @@ nav{
     border-radius: 0 0 3px 3px;
     top: 30px;
     display: none;
+}
+nav form input[type=text]{
+    padding: 5px;
+    width: 330px;
+    border-radius: 3px 0 0 3px;
+}
+nav form input[type=submit]{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0 3px 3px 0;
 }
 .dropdown li:hover{
     background: #f4f4f4;
@@ -101,14 +109,14 @@ nav{
 
 /* header */
 header{
-    height: 20vh;
-    background: url(/img/tamanna-rumee-mPB014NMLmw-unsplash.jpg);
+    height: 60vh;
+    background: url(../img/tamanna-rumee-mPB014NMLmw-unsplash.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 
-    padding: 150px 50px;
+    padding: 120px 50px;
     color: #fff;
 }
 header h1{
@@ -152,7 +160,7 @@ header form input[type=submit]{
 
 /* featured items */
 .featured{
-    padding: 20px 50px;
+    padding: 10px 50px;
     text-align: center;
     background: #f5f5f3;
 }
@@ -163,7 +171,7 @@ header form input[type=submit]{
 .featured img{
     object-fit: cover;
     width: 100%;
-    height: 50vh;
+    height: 35vh;
 }
 .card{
     width: 25%;
@@ -199,20 +207,20 @@ header form input[type=submit]{
     gap: 20px;
     padding: 50px;
     color: #fff;
-    height: 50vh;
+    height: 60vh;
 }
 .display-w{
-    padding: 80px 50px;
+    padding: 30px 50px;
 }
 .display-left{
-    background: url(/img/nordwood-themes-pYWrdKO5ksI-unsplash.jpg);
+    background: url(../img/nordwood-themes-pYWrdKO5ksI-unsplash.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 .display-right{
-    background: url(/img/nordwood-themes-pYWrdKO5ksI-unsplash.jpg);
+    background: url(../img/nordwood-themes-pYWrdKO5ksI-unsplash.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -236,16 +244,17 @@ header form input[type=submit]{
 /* extra-details */
 .extra-details{
     display: flex;
-    height: 50vh;
+    height: 70vh;
 }
 .extra-details-content{
-    padding: 50px;
+    padding: 20px 50px;
     margin-right: 150px;
 }
 .extra-details-image img{
     object-fit: cover;
     width: 100%;
     height: 100%;
+    border-radius: 0;
 }
 /* extra details */
 
@@ -263,7 +272,7 @@ header form input[type=submit]{
 .popular img{
     object-fit: cover;
     width: 100%;
-    height: 60vh;
+    height: 45vh;
 }
 
 /* final details */
@@ -324,7 +333,7 @@ footer{
 .items-card-content-right{
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 0;
 }
 
 .pagination{

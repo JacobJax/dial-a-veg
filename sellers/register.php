@@ -123,6 +123,7 @@
             $seller->register("sellers");
 
             $f_name = $l_name = $email = $phone = $county = $city = $dob =  $pwd = $rpt_pwd = '';
+            header("Location: login.php");
         }
         
     }

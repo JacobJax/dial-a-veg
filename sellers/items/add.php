@@ -69,7 +69,7 @@
         } else {
             if($fileError === 0){
                 $fileNewName = uniqid('', true) . '.' . $actualFileExt;
-                $destination = "./pics/" . $fileNewName;
+                $destination = "../../pics/" . $fileNewName;
                 $imageIllustration = $destination;
                 move_uploaded_file($fileTmpDes, $destination);
             } else {
@@ -81,11 +81,12 @@
             session_start();
 
             $seller_id = $_SESSION['id'];
-            $pic = $destination;
+            $seller_name = $_SESSION['fullname'];
+            $pic = $fileNewName;
 
-            $sql = "INSERT INTO items(item_name, item_category, item_price, item_pic, item_quantity, seller_id) VALUES(?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO items(item_name, item_category, item_price, item_pic, item_quantity, seller_id, seller_name) VALUES(?, ?, ?, ?, ?, ?, ?)";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$name, $category, $price, $pic, $quantity, $seller_id]);
+            $stmt->execute([$name, $category, $price, $pic, $quantity, $seller_id, $seller_name]);
             
             $name = $category = $price = $quantity = $file = $pic = $seller_id = '';
             header("Location: ../dashboard.php");

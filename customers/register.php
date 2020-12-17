@@ -127,7 +127,7 @@
 
 
 ?>
-<?php include"../includes/header.php"; ?>
+<?php include"header.php"; ?>
 <div class="container center">
     <form method="POST">
     <h1 class="h3 mb-3 font-weight-normal text-center">Sign up</h1><hr>

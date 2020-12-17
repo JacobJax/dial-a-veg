@@ -46,7 +46,7 @@
     <tbody>
         <?php foreach($items as $item) { ?>
         <tr>
-            <?php echo " <th scope='row'> <img src='$item->item_pic'></th> " ?>
+            <?php echo " <th scope='row'> <img src='../../pics/$item->item_pic'></th> " ?>
             <?php echo " <td scope='row'>$item->item_name</td> " ?>
             <?php echo " <td scope='row'>$item->item_category</td> " ?>
             <?php echo " <td scope='row'>$item->item_price</td> " ?>
