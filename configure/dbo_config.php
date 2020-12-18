@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $username = 'yoshi';
-$dbname = 'p_blog';
+$dbname = 'dial_a_veg';
 $password = 'esting123';
 
 $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;

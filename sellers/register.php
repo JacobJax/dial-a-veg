@@ -48,11 +48,12 @@
                 $errors['email'] = 'Email must be a valid email address';
             }else{
                 $email = $_POST['email'];
-                $t_sql = "SELECT * FROM users WHERE email= ? ";
+                $t_sql = "SELECT * FROM sellers WHERE email = ? ";
 
                 $stmt = $pdo->prepare($t_sql);
                 $stmt->execute([$email]);
-                if($stmt->fetch()){
+                $det_email = $stmt->fetch();
+                if($det_email){
                     $errors['email'] = 'That email is already taken';
                 }
             }
@@ -109,13 +110,31 @@
                 $errors['rpt_pwd'] = 'The passwords do not match';
             }
         }
+
+        // add to database
+        if(!array_filter($errors)) {
+            require_once"../php-inc/user.php";
+            $dob = $_POST['dob'];
+            $prof = ".." . "/profile-pics/" . "default-profile.png";
+            $hash_password = password_hash($pwd, PASSWORD_DEFAULT);
+
+            $seller = new User($f_name, $l_name, $email, $phone, $county, $city, $dob, $prof, $hash_password);
+
+            $seller->register("sellers");
+
+            $f_name = $l_name = $email = $phone = $county = $city = $dob =  $pwd = $rpt_pwd = '';
+            header("Location: login.php");
+        }
+        
     }
 
 
 ?>
-<?php include"../includes/header.php"; ?>
-<div class="container">
+<?php include"sellers-header.php"; ?>
+<div class="container center">
     <form method="POST">
+    <h1 class="h3 mb-3 font-weight-normal text-center">Register</h1>
+    <p class="text-center"><small>Register to become a trader with just a few details</small></p><hr>
         <div class="form-row">
             <div class="form-group col-md-6">
             <label for="inputEmail4">First name</label>
@@ -169,6 +188,9 @@
             </div>
         </div>
         
-        <button type="submit" class="btn btn-lg btn-primary" name="submit">Register</button>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Register</button><br>
+        <div class="form-group">
+            <h6>Already have an account? <a href="login.php">Log in</a></h6>
+        </div>
     </form>
 </div>
