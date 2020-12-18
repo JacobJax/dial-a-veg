@@ -1,7 +1,14 @@
 <?php
     require_once"../configure/dbo_config.php";
     session_start();
-    $id = $_SESSION['id'];
+
+    global $id;
+
+    if(!isset($_SESSION['seller_id'])) {
+        header("Location: login.php");
+    } else if(isset($_SESSION['seller_id'])){
+        $id = $_SESSION['seller_id'];
+    }
 
     $sql = "SELECT * FROM items WHERE seller_id = ?";
     $stmt = $pdo->prepare($sql);

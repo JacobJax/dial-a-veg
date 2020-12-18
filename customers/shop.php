@@ -17,7 +17,21 @@
         $stmt->execute([$category]);
         $items = $stmt->fetchAll();
     }
-   
+
+    if(isset($_POST['search'])) {
+
+        if(isset($_POST['veg-search'])) {
+
+            $item_name = '%' . $_POST['veg-search'] . '%';
+            $category = '%' . ucfirst($_POST['veg-search']) . '%';
+
+            $sql = "SELECT * FROM items WHERE item_name LIKE ? OR item_category LIKE ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$item_name, $category]);
+            $items = $stmt->fetchAll();
+        }
+    }
+     
     
 ?>
 
@@ -26,6 +40,7 @@
 <section class="left-menu">
     <h3>Categories</h3>
     <ul>
+        <li><a href="shop.php">All items</a></li>
         <li><a href="shop.php?category=Leafy greens">Leafy greens</a></li>
         <li><a href="shop.php?category=Cruferous">Cruferous</a></li>
         <li><a href="shop.php?category=Marrow">Marrow</a></li>
@@ -49,13 +64,13 @@
                     </div>
                     <div class="items-card-content-right">
                         <?php echo "<p>Ksh $item->item_price</p>" ?>
-                        <?php echo "<a href='' class='buy-btn'>Buy now</a>" ?>
+                        <?php echo "<a href='item_det.php?item_id=$item->item_id' class='buy-btn'>Buy now</a>" ?>
                     </div>
                 </div>
             </div>
             <?php } ?> 
         <?php } else { ?>
-            <?php echo "<h1> NO RESULTS FOUND</h1>"; ?>
+            <?php echo "<h1 style='text-align: center;'> NO RESULTS FOUND</h1>"; ?>
         <?php } ?>                
     </div>
     

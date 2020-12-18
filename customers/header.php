@@ -15,22 +15,28 @@
             </div>
         </div>
         <div>
-            <form action="" method="post" style="display: flex;">
+            <form action="shop.php" method="POST" style="display: flex;">
                 <input type="text" name="veg-search" placeholder="What do veggie do you want to get">
-                <input type="submit" name="submit" value="Search" style="float: right;">
+                <input type="submit" name="search" value="Search" style="float: right;">
             </form>
         </div>
         <div class="nav-items">
             <ul>
                 <div class="common-items">
                     <li><a href="../index.php">Home</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Cart</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="cart.php">Cart</a></li>
                 </div>
                 <div class="call-to-action">
                     <li><a href="../sellers/register.php" class="seller-btn">Become a seller</a></li>
-                    <li><a href="../customers/login.php" class="login-btn">Log in</a></li>
-                    <li><a href="../customers/register.php" class="sign-btn">Sign up</a></li>
+                    <?php session_start() ?>
+                    <?php if(isset($_SESSION["c_id"])) { ?>
+                        <?php echo "<li><a href='account.php' class='login-btn'>Acount</a></li>" ?>
+                        <?php echo "<li><a href='logout.php' class='login-btn'>Log out</a></li>" ?>
+                    <?php } else { ?>
+                        <?php echo "<li><a href='register.php' class='login-btn'>Sign up</a></li>" ?>
+                        <?php echo "<li><a href='login.php' class='login-btn'>Log in</a></li>" ?>
+                    <?php } ?>
                 </div>                
             </ul>
         </div>

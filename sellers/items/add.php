@@ -80,9 +80,16 @@
         if(!array_filter($errors)){
             session_start();
 
-            $seller_id = $_SESSION['id'];
-            $seller_name = $_SESSION['fullname'];
+            global $seller_id;
+            global $seller_name;
             $pic = $fileNewName;
+
+            if(!isset($_SESSION['seller_id'])) {
+                header("Location: ../login.php");
+            } else if(isset($_SESSION['seller_id'])){
+                $seller_id = $_SESSION['seller_id'];
+                $seller_name = $_SESSION['fullname'];
+            }
 
             $sql = "INSERT INTO items(item_name, item_category, item_price, item_pic, item_quantity, seller_id, seller_name) VALUES(?, ?, ?, ?, ?, ?, ?)";
             $stmt = $pdo->prepare($sql);

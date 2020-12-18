@@ -20,14 +20,17 @@
         $hash_pwd = $details->password;
         if(password_verify($password, $hash_pwd)){
           session_start();
-          $_SESSION["id"] = $details->seller_id;
+          $_SESSION["seller_id"] = $details->seller_id;
           $_SESSION["email"] = $details->email;
           $_SESSION["fullname"] = $details->first_name . ' ' . $details->last_name;
 
           header("Location: dashboard.php");
+          $email = $password = '';
         } else {
           $errors['password'] = 'Wrong password try again';
         }
+      } else {
+        $errors['password'] = 'That account does not exist';
       }
     }
   }
@@ -40,12 +43,12 @@
 <h1 class="h3 mb-3 font-weight-normal text-center">Sign in</h1><hr>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address:</label>
-    <input type="email" class="form-control" name="email">
+    <input type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($email)?>">
     <div class="red-text"><?php echo $errors['email']; ?></div>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password:</label>
-    <input type="password" class="form-control" name="password">
+    <input type="password" class="form-control" name="password" value="<?php echo htmlspecialchars($password)?>">
     <div class="red-text"><?php echo $errors['password']; ?></div>
   </div>
   <button type="submit" class="btn btn-lg btn-primary btn-block" name="submit">Log in</button><br>

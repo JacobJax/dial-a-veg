@@ -1,7 +1,14 @@
 <?php
     require_once"../../configure/dbo_config.php";
+
     session_start();
-    $id = $_SESSION['id'];
+    global $id;
+
+    if(!isset($_SESSION['seller_id'])) {
+        header("Location: ../login.php");
+    } else if(isset($_SESSION['seller_id'])){
+        $id = $_SESSION['seller_id'];
+    }
 
     $sql = "SELECT * FROM items WHERE seller_id = ?";
     $stmt = $pdo->prepare($sql);
@@ -10,6 +17,20 @@
     // var_dump($items);
 
     // $number_of_items = $stmt->rowcount();
+
+    if(isset($_POST['search'])) {
+
+        if(isset($_POST['itm_search'])) {
+
+            $item_name = '%' . $_POST['itm_search'] . '%';
+            $category = '%' . ucfirst($_POST['itm_search']) . '%';
+
+            $sql = "SELECT * FROM items WHERE item_name LIKE ? AND seller_id = ? OR item_category LIKE ? AND seller_id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$item_name, $id, $category, $id]);
+            $items = $stmt->fetchAll();
+        }
+    }
 
 ?>
 
@@ -20,12 +41,12 @@
             <h2 class="text-center">Items</h2>
         </div>
         <div class="col-md-6">
-            <form class="form-inline">
+            <form class="form-inline" method="POST">
                 <div class="form-group mx-sm-3 mb-2">
                     <label for="inputPassword2" class="sr-only">Search:</label>
-                    <input type="text" class="form-control" name="search" placeholder="search item">
+                    <input type="text" class="form-control" name="itm_search" placeholder="search item">
                 </div>
-                <button type="submit" class="btn btn-success mb-2 name="submit">Search</button>
+                <button type="submit" class="btn btn-success mb-2" name="search">Search</button>
             </form>
         </div>
     </div><br>

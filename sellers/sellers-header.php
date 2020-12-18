@@ -12,7 +12,7 @@
         <div class="nav-left">
             <div class="nav-logo">
                 <!-- <?php session_start(); ?> -->
-                <?php if(isset($_SESSION['id'])) {?>
+                <?php if(isset($_SESSION['seller_id'])) {?>
                     <?php echo "<h5><a href='dashboard.php'>Dial a Veg</a> Trader</h5>"; ?>
                 <?php } else {?>
                     <?php echo "<h5><a href='#'>Dial a Veg</a> Trader</h5>"; ?>
@@ -23,13 +23,13 @@
         <div class="nav-items">
             <ul>
                 <div class="common-items">
-                    <?php if(isset($_SESSION['id'])) { ?>
+                    <?php if(isset($_SESSION['seller_id'])) { ?>
                         <?php echo " <li><a href='./items/items.php'>Products</a></li>" ?>
                         <?php echo " <li><a href='./items/sales.php'>Sales</a></li>" ?>
                     <?php }?>
                 </div>
                 <div class="call-to-action">
-                    <?php if(isset($_SESSION["id"])) { ?>
+                    <?php if(isset($_SESSION["seller_id"])) { ?>
                         <?php echo "<li><a href='account.php' class='login-btn'>Account</a></li>";?>
                         <?php echo "<li><a href='logout.php' class='sign-btn'>Sign out</a></li>"; ?>
                     <?php } else { ?>

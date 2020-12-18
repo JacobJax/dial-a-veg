@@ -4,10 +4,14 @@
   $errors = ['email'=>'', 'password'=>'', 'account'=>''];
 
   if(isset($_POST['submit'])) {
+
     if(empty($_POST['email']) OR empty($_POST['password'])){
+
       $errors['email'] = 'Please enter Email or Username';
-      $errors['password'] = 'Please enter Password';            
+      $errors['password'] = 'Please enter Password';   
+
     } else {
+
       $email = $_POST['email'];
       $password = $_POST['password'];
       
@@ -16,16 +20,24 @@
       $stmt->execute([$email]);
       $details = $stmt->fetchObject();
       
-      if($details){
+      if($details) {
+
         $hash_pwd = $details->password;
+
         if(password_verify($password, $hash_pwd)){
+
           session_start();
-          $_SESSION["id"] = $details->customer_id;
-          $_SESSION["email"] = $details->email;
-          $_SESSION["fullname"] = $details->first_name . ' ' . $details->last_name;
+          $_SESSION["c_id"] = $details->customer_id;
+          $_SESSION["c_email"] = $details->email;
+          $_SESSION["c_fullname"] = $details->first_name . ' ' . $details->last_name;
 
           header("Location: shop.php");
-        } 
+           
+        } else {
+          $errors['password'] = 'Incorrect password';
+        }
+      } else {
+        $errors['password'] = 'That account does not exist';
       }
     }
   }

@@ -1,8 +1,8 @@
 <?php include_once"includes/header.php"; ?>
 <header>
-    <form action="" method="post">
+    <form action="customers/shop.php" method="POST">
         <input type="text" name="veg-search" placeholder="What do veggie do you want to get">
-        <input type="submit" name="submit" value="Search">
+        <input type="submit" name="search" value="Search">
     </form><br>
     <h1>VEGIES AT YOUR FINGERFTIPS</h1>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt natus repudiandae </p><br><br>
@@ -44,13 +44,13 @@
 
 <section class="display">
     <div class="display-w display-left">
-        <h3>Lorem, ipsum dolor.</h3><br>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, molestias!</p><br><br>
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, molestias!</p><br>
         <a href="customers/shop.php" class="smn-1 smn-btn">Buy now</a>
     </div>
     <div class="display-w display-right">
-        <h3>Lorem, ipsum dolor.</h3><br>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, molestias!</p><br><br>
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, molestias!</p><br>
         <a href="customers/shop.php" class="smn-2 smn-btn">Buy now</a>
     </div>
 </section>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="card-content-right">
                 <?php echo "<p>$item->item_price</p>" ?>
-                    <a href="customers/shop.php" class="buy-btn"><small>Shop now</small></a>
+                    <a href="customers/shop.php" class="buy-btn">Shop now</a>
                 </div>
             </div>
         </div>
