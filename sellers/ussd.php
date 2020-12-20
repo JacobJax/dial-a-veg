@@ -82,4 +82,9 @@
         $response = "END You have 0 sales";
 
     }
+
+    header('Content-type: text/plain');
+    echo $response;
+
+    
 ?>
