@@ -17,30 +17,37 @@
     } else if($text == "1") {
         $response = "CON Enter first name\n";
         $f_name = $text;
+        $text = "1*$f_name";
 
     } else if($text == "1*$f_name") {
         $response = "CON Enter last name\n";
         $l_name = $text;
+        $text = "1*$f_name*$l_name";
 
     } else if($text == "1*$f_name*$l_name"){
         $response = "CON Enter your email\n";
         $email = $text;
+        $text = "1*$f_name*$l_name*$email";
 
     } else if($text == "1*$f_name*$l_name*$email"){
         $response = "CON Enter your mobile number\n";
         $phone = $text;
+        $text = "1*$f_name*$l_name*$email*$phone";
 
     } else if($text == "1*$f_name*$l_name*$email*$phone") {
         $response = "CON Enter your County\n";
         $county = $text;
+        $text = "1*$f_name*$l_name*$email*$phone*$county";
         
     } else if($text == "1*$f_name*$l_name*$email*$phone*$county") {
         $response = "CON Enter your Town\n";
         $city = $text;
+        $text = "1*$f_name*$l_name*$email*$phone*$county*$city";
 
     } else if($text == "1*$f_name*$l_name*$email*$phone*$county*$city") {
         $response = "CON Enter your date of birth ('year'-'month'-'date')\n";
         $dob = $text;
+        $text = "1*$f_name*$l_name*$email*$phone*$county*$city*$dob";
 
     } else if($text == "1*$f_name*$l_name*$email*$phone*$county*$city*$dob") {
         $response = "CON Choose a password\n";
@@ -53,6 +60,8 @@
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$f_name, $l_name, $email, $phone, $county, $city, $dob, $hash_password]);
 
+        $text = "1*$f_name*$l_name*$email*$phone*$county*$city*$dob*$pwd";
+
     } else if($text == "1*$f_name*$l_name*$email*$phone*$county*$city*$dob*$pwd"){
         $response = "END You have succesfully registered";
 
@@ -64,6 +73,7 @@
     } else if($text == "2*1") {
         $response = "CON Enter your email \n";
         $s_email = $text;
+        $text = "2*1*$s_email";
         
     } else if($text == "2*1*$s_email") {
         $sql = "SELECT seller_id FROM sellers WHERE email = ?";
@@ -86,5 +96,5 @@
     header('Content-type: text/plain');
     echo $response;
 
-    
+
 ?>
