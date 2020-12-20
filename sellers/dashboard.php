@@ -21,9 +21,9 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1>Dashboard</h1><br>
-        <?php if(isset($_SESSION["fullname"])) {?>
+        <!-- <?php if(isset($_SESSION["fullname"])) {?>
             <small><?php echo "<h3>Hey there ". $_SESSION["fullname"]."</h3>"; ?></small>
-        <?php } ?>
+        <?php } ?> -->
         <div class="row">
             <div class="col-sm">
                 <div class="card" style="width: 25rem;">
