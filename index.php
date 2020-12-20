@@ -29,11 +29,11 @@
             </div>
             <div class="card-content">
                 <div class="card-content-left" style="text-align: left;">
-                    <?php echo "<p>$item->item_name</p>" ?>
-                    <?php echo "<p>$item->seller_name</p>" ?>
+                    <?php echo "<p>" . ucfirst($item->item_name) . "</p>" ?>
+                    <?php echo "<p>" . ucwords($item->seller_name) . "</p>" ?>
                 </div>
                 <div class="card-content-right">
-                <?php echo "<p>$item->item_price</p>" ?>
+                <?php echo "<p>Kshs $item->item_price</p>" ?>
                     <a href="customers/shop.php" class="buy-btn"><small>Shop now</small></a>
                 </div>
             </div>
@@ -85,11 +85,11 @@
             </div>
             <div class="card-content">
                 <div class="card-content-left" style="text-align: left;">
-                    <?php echo "<p>$item->item_name</p>" ?>
-                    <?php echo "<p>$item->seller_name</p>" ?>
+                    <?php echo "<p>" . ucfirst($item->item_name) . "</p>" ?>
+                    <?php echo "<p>" . ucwords($item->seller_name) . "</p>" ?>
                 </div>
                 <div class="card-content-right">
-                <?php echo "<p>$item->item_price</p>" ?>
+                <?php echo "<p>Kshs $item->item_price</p>" ?>
                     <a href="customers/shop.php" class="buy-btn">Shop now</a>
                 </div>
             </div>

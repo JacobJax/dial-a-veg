@@ -5,7 +5,6 @@
     session_start();
     global $id;
 
-
     if(!isset($_SESSION['c_id'])) {
         header("Location: ../login.php");
     } else if(isset($_SESSION['c_id'])){
