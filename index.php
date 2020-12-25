@@ -5,7 +5,7 @@
         <input type="submit" name="search" value="Search">
     </form><br>
     <h1>VEGIES AT YOUR FINGERFTIPS</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt natus repudiandae </p><br><br>
+    <p>We are your onestop online shop for fresh vegetables fruits with fast efficient service</p>
 
     <a href="sellers/register.php" class="seller-btn">Become a seller</a>
     <a href="customers/shop.php" class="shop-btn">Shop now</a>
@@ -13,7 +13,7 @@
 
 <section class="featured">
     <h3>Popular Items</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nisi.</p>
+    <p>Checkout our most visited popular items by other customers just like you</p>
 
     <div class="featured-items">
         <?php include_once"configure/dbo_config.php" ?>
@@ -44,24 +44,24 @@
 
 <section class="display">
     <div class="display-w display-left">
-        <h3>Lorem, ipsum dolor.</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, molestias!</p><br>
+        <h3>Fast Customer Service</h3>
+        <p>We put our customers at the center of service provision. After all the Customer is always right</p><br>
         <a href="customers/shop.php" class="smn-1 smn-btn">Buy now</a>
     </div>
     <div class="display-w display-right">
-        <h3>Lorem, ipsum dolor.</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, molestias!</p><br>
+        <h3>Nothing but the Best</h3>
+        <p>Our products come from the best farmers using best natural organic methods to grow their produce</p><br>
         <a href="customers/shop.php" class="smn-2 smn-btn">Buy now</a>
     </div>
 </section>
 
 <section class="extra-details">
     <div class="extra-details-content">
-        <h3>Lorem, ipsum.</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis exercitationem minima quia tempora atque sed porro, ipsam aliquam, voluptatem ad est assumenda commodi dolorum excepturi magnam debitis quis. Odio, tempora.</p><br>
+        <h3>Health focused</h3>
+        <p>With the increased rate in obesity related diseases. We are aimed at providing you our customer, with products that help keep your heart pumping and nourish you with the neccessary vitamins to keep you going.</p>
 
-        <h4>We are Good at What we do</h4>
-        <p><small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, repudiandae?</small></p>
+        <h5>We are Good at What we do</h5>
+        <p><small>"...dial a veg is really efficient for me especially during this pandemic season. It has proven very helpful."<br>--<b>Monica Adhis</b></small></p>
     </div>
     <div class="extra-details-image">
         <img src="img/markus-spiske-vPGJ2fMsWkQ-unsplash.jpg" alt="">
@@ -70,7 +70,7 @@
 
 <section class="popular">
     <h3>Featured Items--</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nisi.</p><br><br>
+    <p>Have a look at some of the products in our honourable mentions</p><br>
     <div class="featured-items">
     <?php include_once"configure/dbo_config.php" ?>
         <?php $sql = "SELECT * FROM items LIMIT 4, 3"; ?>
@@ -99,7 +99,7 @@
 </section>
 
 <section class="final-details">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic natus fugit dolores non neque a veniam incidunt. Eum iure molestias id enim nihil earum nemo rem consectetur quisquam, accusantium, rerum ea labore asperiores placeat laudantium, non animi quam harum eos quas dolorem totam aut facere? Molestias tempora suscipit ipsam magnam!</p>
+    <p>Help people perform better, think faster, and live better using a proven blend of ancient knowledge and brand new technologies, tempered by research, science, and measured results from our customers, top athletes, and medical professionals. It starts with their purpose: “Help people perform better, think faster, and live better. Then it goes on to explain exactly how they plan to do it: Using ancient knowledge, brand new technologies, and science.</p>
 </section>
 
 <?php include_once"includes/footer.php"; ?>

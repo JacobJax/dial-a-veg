@@ -245,11 +245,16 @@ header form input[type=submit]{
 /* extra-details */
 .extra-details{
     display: flex;
-    height: 70vh;
+    height: 50vh;
+    gap: 50px;
 }
 .extra-details-content{
-    padding: 20px 50px;
-    margin-right: 150px;
+    padding-top: 50px;
+    padding-left: 50px;
+    width: 50%;
+}
+.extra-details-image{
+    width: 60%;
 }
 .extra-details-image img{
     object-fit: cover;
