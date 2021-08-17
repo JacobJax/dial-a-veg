@@ -6,10 +6,10 @@
 // $password = 'esting123';
 
 // production server
-$host = 'remotemysql.com';
-$username = '69AUP95Yt4';
-$dbname = '69AUP95Yt4';
-$password = 'ezmcbDwDP3';
+$host = 'bep5prw5jz4yqcnr9a0w-mysql.services.clever-cloud.com';
+$username = 'utzpfviupacs5h9s';
+$dbname = 'bep5prw5jz4yqcnr9a0w';
+$password = 'lftuwdTXJbp2aw5O3vGm';
 
 $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
 $pdo = new PDO($dsn, $username, $password);
