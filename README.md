@@ -1,4 +1,4 @@
-# DIAL A VEGIE
+# DIAL A VEG🍅
 
 Dial a veg website is a simple PHP vVegetables E-Commerce platform. It connects traders to customers and the roles for user can change; much like e-bay.
 
