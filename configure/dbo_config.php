@@ -6,13 +6,13 @@
 // $password = 'esting123';
 
 // production server
-$host = 'bep5prw5jz4yqcnr9a0w-mysql.services.clever-cloud.com';
-$username = 'utzpfviupacs5h9s';
-$dbname = 'bep5prw5jz4yqcnr9a0w';
-$password = 'lftuwdTXJbp2aw5O3vGm';
+$db_host = getenv('DB_HOST');
+$db_port = getenv('DB_PORT');
+$db_name = getenv('DB_NAME');
+$db_user = getenv('DB_USER');
+$db_pwd = getenv('DB_PWD');
 
-$dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
-$pdo = new PDO($dsn, $username, $password);
+$pdo = new PDO("mysql:host=$db_host;port=$db_port;dbname=$db_name", "$db_user" , "$db_pwd");
 $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
 ?>
